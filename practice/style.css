@@ -1,0 +1,33 @@
+.item {
+    color: blueviolet;
+}
+.hi6 {
+    color: aqua;
+}
+.top {
+    background: red;
+    height: 100px;
+}
+.mid {
+    background: blue;
+    height: 100px;
+}
+.bot {
+    background: bisque;
+    height: 100px;
+}
+.like {
+    background: red;
+}
+.sub {
+    background: blue;
+}
+.comment {
+    background: yellow;
+}
+.login_form {
+    margin-top: 20px;
+    padding: 30px;
+    border: 2px solid rosybrown;
+    background: bisque;
+}
