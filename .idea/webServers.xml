@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ebf3631b-4562-4a18-88d2-df675d6bfce0" name="jayjayjayUbuntu">
+        <fileTransfer rootFolder="/usr/local/httpd2.4/htdocs" accessType="SFTP" host="localhost" port="22" sshConfigId="7399926b-5884-41b3-8d7a-212a245e193a" sshConfig="jayjayjay@localhost:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
