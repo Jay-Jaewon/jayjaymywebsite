@@ -1,3 +1,6 @@
+
+
+/*기본 메뉴 css*/
 body {
     margin: 0;
     font-family: 'Noto Sans KR', sans-serif;
@@ -8,78 +11,53 @@ a {
     text-decoration: none;
     color: black;
 }
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    padding: 8px 25px;
-}
 
-.navbar_logo {
-    font-size: 50px;
-    color: white;
-}
-.navbar_logo a{
-    color: white;
-}
-.navbar_logo i {
-    color : rosybrown;
-}
-.navbar_menu {
+nav ul {
     display: flex;
     list-style: none;
     padding-left: 0;
 
 }
-.navbar_menu li {
-    font-size: 16px;
-    padding: 13px 12px;
+nav ul li {
+    font-size: 22px;
+    padding: 10px 12px;
+    margin-left: 70px;
+    margin-right: 70px;
+    white-space: nowrap;
+
 }
-.navbar_menu li a{
+nav ul li a {
     color: white;
+    font-weight: bolder;
 }
-.navbar_menu li:hover {
-    background-color: rosybrown;
-    border-radius: 10px;
+*        { margin:0; padding: 0; }
 
-}
-
-.navbar_menu li:hover .menu-sub {
-    opacity: 1;
+.board:hover .menu-sub {
+    visibility: inherit;
     pointer-events: auto;
-    display: inherit;
+    display: block;
 
 }
-
-
 .menu-sub {
-    color: black;
-    font-size: 12px;
+    background: white;
+    position: absolute;
+    border: 2px solid #1b5ac2;
+    transform: translate(-38px,10px);
+    font-size: 10px;
     text-align: center;
     font-weight: bold;
-    border: 1px solid black;
     padding-left: 0;
     list-style: none;
-    background-color: white;
     white-space: nowrap;
-    position: absolute;
-    transform: translate(-13px,13px);
-    border-radius: 10px;
-    opacity: 0;
-    transition: all .4s;
     display: none;
+    visibility: hidden;
 }
-.menu-sub li a {
+.menu-sub li {
+    margin: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.menu-sub li a{
     color: black;
+    font-weight: bolder;
 }
-.products {
-    text-align: center;
-
-}
-.products img {
-    border: 1px solid black;
-    margin: 40px;
-}
-
-

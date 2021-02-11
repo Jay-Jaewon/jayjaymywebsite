@@ -15,6 +15,28 @@ function quit_signup() {
     alert("회원가입이 취소 되었습니다.");
     history.back();
 }
+function id_form_check() {
+    var id = document.getElementById("id").value;
+    if (en_check(id) && number_check(id) && id.length >=6 && id.length <=20
+        && !empty_check(id) && !special_check(id) && !kor_check(id)){
+        //ok;
+        return true;
+    }else{
+        alert("아이디 형식이 맞지 않습니다."+id);
+        return false;
+    }
+}
+function nickname_form_check() {
+    var nickname = document.getElementById("nickname").value;
+    if(!special_check(nickname) && !empty_check(nickname)){
+        //ok
+        return true;
+    }else{
+        alert("닉네임 형식이 맞지 않습니다.");
+        return false;
+    }
+
+}
 
 function password_check() {
     var password = document.getElementById('password').value;
@@ -30,23 +52,30 @@ function password_check() {
             document.getElementById('password_check').style.color='red';
         }
     }
+    if(document.getElementById('password_re').value == ''){
+        document.getElementById('password_check').innerHTML='';
+    }
 }
-    function form_check() {
+    function form_check1() {
         //아이디 검사--시작.
+        // var str = document.getElementById("email").value;
+        // if (empty_check(str)) {
+        //     alert("아이디를 입력해 주세요");
+        //     return false;
+        // }
         var str = document.getElementById("id").value;
-        if (empty_check(str)) {
-            alert("아이디를 입력해 주세요");
-            return false;
-        }
-
-        if (en_check(str) && number_check(str) && str.length >=6 && str.length <=16
-            && !empty_check(str) && !special_check(str)){
-
+        if (en_check(str) && number_check(str) && str.length >=6 && str.length <=20
+            && !empty_check(str) && !special_check(str) && !kor_check(str)){
+            //ok;
         }else{
+            // alert(str);
             alert("아이디 형식이 맞지 않습니다.");
+            // alert("영어"+en_check(str) +"숫자"+number_check(str)+"빈칸"+!empty_check(str) +"특수문자"+!empty_check(str) +"한글"+ !kor_check(str));
+            // alert(length);
             return false;
         }
 
+        //비밀번호 검사
         var str = document.getElementById("password").value;
         if (empty_check(str)){
             alert("비밀번호를 입력해 주세요");
@@ -58,25 +87,25 @@ function password_check() {
             return false;
         }
 
-        if (en_check(str) && number_check(str) && str.length >=6 && str.length <= 16
-            && !empty_check(str)){
+        if (en_check(str) && number_check(str) && str.length >=6 && str.length <= 20
+            && !empty_check(str) && !kor_check(str)){
         }else{
             alert("비밀번호 형식이 맞지 않습니다.");
             return false;
         }
+        //닉네임 검사
+        var str = document.getElementById("nickname")
+        if(!special_check(str)){
+            //ok
+        }else{
+            alert("닉네임에 특수문자를 사용할 수 없습니다.");
+            return false;
+        }
+
 
         if(!empty_check(document.getElementById("password_answer").value)
             && !empty_check(document.getElementById("nickname").value)
-            && !empty_check(document.getElementById("name").value)
-            && !empty_check(document.getElementById("email").value)
-            && !empty_check(document.getElementById("email_dns").value)
-            && !empty_check(document.getElementById("zonecode").value)
-            && !empty_check(document.getElementById("address").value)
-            && !empty_check(document.getElementById("address_etc").value)
-            && !empty_check(document.getElementById("tel_1").value)
-            && !empty_check(document.getElementById("tel_2").value)
-            && !empty_check(document.getElementById("tel_3").value)
-            && !empty_check(document.getElementById("birth").value)){
+            && !empty_check(document.getElementById("email").value)){
         }else{
             alert("항목을 모두 채워 주세요.")
             return false;
@@ -91,7 +120,7 @@ function password_check() {
             return false;
         }
 
-        alert("회원가입 요청!");
+        alert("회원가입!");
         return true;
     }
 
@@ -129,7 +158,7 @@ function password_check() {
     }
 
     function kor_check(str) {
-        var pattern_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+        var pattern_kor = /[ㄱ-ㅎㅏ-ㅣ가-힣]/;
         if(pattern_kor.test(str) == true) {
             return true;
         }else {

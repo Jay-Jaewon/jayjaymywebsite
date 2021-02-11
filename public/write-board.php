@@ -8,8 +8,8 @@ if (!isset($_SESSION['userID'])) {
 if ($userLogin){
 
 }else{
-    echo '<script>alert("로그인을 해야 글을 작성할 수 있습니다!");</script>';
-    echo '<script>history.back();</script>';
+  //  echo '<script>alert("로그인을 해야 글을 작성할 수 있습니다!");</script>';
+   // echo '<script>history.back();</script>';
 }
 ?>
 <!doctype html>
